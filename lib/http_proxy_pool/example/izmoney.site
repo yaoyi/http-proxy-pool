@@ -3,6 +3,7 @@ sitetask("http://ip.izmoney.com") do
     ips = []
 
     agent.page.search("tbody").search("tr").each do |node|
+      node.search("//p[@style='display:none;']").remove
       tds = node.search('td')
       fields = {}
 
